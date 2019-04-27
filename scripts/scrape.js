@@ -7,8 +7,9 @@ var scrape = function(cb) {
     request("http://www.apnews.com/apf-topnews", function(err, res, body){
         var $ = cheerio.load(body);
         var articles = [];
-
+        console.log('hello')
         $(".FeedCard").each(function(i, element){
+            console.log(element)
             var head = $(this).children(".CardHeadline").text().trim();
             var sum = $(this).children(".content").text().trim();
 

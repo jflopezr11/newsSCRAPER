@@ -25,7 +25,7 @@ app.use(router);
 
 var db = process.env.MONGDB_URI || "mongodb://localhost/mongoHeadlines";
 
-mongoose.connect(db, function(error){
+mongoose.connect(db,{ useNewUrlParser: true }, function(error){
     if (error) {
         console.log(error);
     } 
